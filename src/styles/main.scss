@@ -94,6 +94,11 @@ body {
         letter-spacing: 3px;
         text-transform: uppercase;
       }
+
+      &--input {
+        position: absolute;
+        left: -9999px;
+      }
     }
 
     &--copy {
