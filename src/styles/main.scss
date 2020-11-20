@@ -11,27 +11,46 @@ body {
   background-image: url("../images/bgc-img.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
 
   &__left {
-    //
+    position: relative;
+    width: 50vw;
+    transform: translate(0);
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    @media (height: 1024px) {
+      transform: translate(-20%);
+    }
   }
 
   &__back {
     background-image: url("../images/sparks_back.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-attachment: fixed;
     background-position: left;
     height: 100vh;
   }
 
   &__person {
+    position: relative;
+    left: 200px;
+    margin-left: -200px;
     background-image: url("../images/witcher.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-attachment: fixed;
     background-position: left;
     height: 100vh;
   }
@@ -40,35 +59,61 @@ body {
     background-image: url("../images/sparks_front.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-attachment: fixed;
     background-position: left;
     height: 100vh;
   }
 
   &__right {
-    position: absolute;
-    top: 200px;
-    right: 9%;
-
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    padding-right: 5%;
+
+    @media (max-height: 690px) {
+      transform: scale(0.7);
+    }
+
+    @media (max-width: 1024px) {
+      width: 100vw;
+      padding-right: 0%;
+      // transform: scale(0.7);
+    }
+
+    @media (max-width: 768px) {
+      top: -10%;
+    }
 
     &--percent {
       font-size: 208px;
       @include text;
+
+      @media (max-width: 768px) {
+        font-size: 120px;
+      }
     }
 
     &--welcome {
       font-size: 68px;
       text-transform: uppercase;
       @include text;
+
+      @media (max-width: 768px) {
+        font-size: 38px;
+      }
     }
   }
 
   &__extra {
     display: flex;
-
     margin: 70px 0;
+
+    @media (max-width: 768px) {
+      margin: 50px 0;
+    }
 
     &--code {
       position: relative;
@@ -79,6 +124,11 @@ body {
       -webkit-border-radius: 40px 0 0 40px;
       border: 1px dashed $border-color;
       border-right: 1px solid $border-color;
+
+      @media (max-width: 768px) {
+        height: 60px;
+        width: 170px;
+      }
 
       &--name {
         position: absolute;
@@ -93,6 +143,10 @@ body {
         font-weight: 400;
         letter-spacing: 3px;
         text-transform: uppercase;
+
+        @media (max-width: 768px) {
+          font-size: 25px;
+        }
       }
 
       &--input {
@@ -112,6 +166,11 @@ body {
       border-left: 0 solid $border-color;
       cursor: pointer;
 
+      @media (max-width: 768px) {
+        height: 60px;
+        width: 130px;
+      }
+
       &--name {
         position: absolute;
         top: 50%;
@@ -128,6 +187,10 @@ body {
         padding: 30px;
         width: 140px;
 
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+
         @include hover(color, $hover-code-color);
       }
     }
@@ -139,20 +202,46 @@ body {
 
   &__logo {
     position: absolute;
-    bottom: 58px;
-    left: 69px;
+    bottom: 45px;
+    left: 60px;
 
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
-    background-size: 120px 35px;
-    width: 120px;
-    height: 35px;
+    background-size: 200px 60px;
+    width: 215px;
+    height: 65px;
+
+    @media (max-height: 690px) {
+      background-size: 120px 35px;
+      width: 120px;
+      height: 35px;
+      bottom: 20px;
+      left: 30px;
+    }
+
+    @media (max-width: 768px) {
+      bottom: 60px;
+      left: 50%;
+      transform: translate(-50%);
+    }
   }
 
   &__terms {
     position: absolute;
     bottom: 58px;
-    right: 68px;
+    right: 65px;
+
+    @media (max-height: 690px) {
+      bottom: 20px;
+      right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 200px;
+    }
 
     &--name {
       font-family: Arial, Helvetica, sans-serif;

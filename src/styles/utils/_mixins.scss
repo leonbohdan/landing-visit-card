@@ -29,6 +29,11 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 
+  @media (max-width: 768px) {
+    height: 60px;
+    width: 260px;
+  }
+
   @include hover(opacity, 0.8);
 
   &:active {

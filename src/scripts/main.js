@@ -9,6 +9,19 @@ const copyToClipboard = () => {
   document.execCommand('copy');
 };
 
+const pushNotification = (title, type) => {
+  copy.insertAdjacentHTML('afterbegin',
+    `<div
+      class="notification ${type}"
+    >
+      <h2 class="title">${title}</h2>
+    </div>`);
+};
+
 copy.addEventListener('click', () => {
   copyToClipboard();
+
+  pushNotification(`The Code is copied`, 'success');
+
+  setTimeout(() => document.querySelector('.notification').remove(), 2000);
 });
