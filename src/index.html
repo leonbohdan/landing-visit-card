@@ -2,12 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <meta name="description" content="Landing visit card">
+    <meta name="keywords" content="html, css, scss, js">
+    <title>Visit card</title>
+    <link
+      rel="shortcut icon"
+      href="./images/dices.svg"
+      type="image/x-icon"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__left" id="scene">
+        <div class="header__back" data-depth="0.1"></div>
+        <div class="header__person" data-depth="0.0"></div>
+        <div class="header__front" data-depth="0.3"></div>
+      </div>
+
+      <div class="header__right">
+        <h1 class="header__right--percent">300%</h1>
+
+        <h2 class="header__right--welcome">Welcome bonus</h2>
+
+        <div class="header__extra">
+          <div class="header__extra--code">
+            <input
+              type="text"
+              value="WITCHER"
+              class="header__extra--code--input"
+              id="code"
+              readonly
+            />
+            <span class="header__extra--code--name">
+              WITCHER
+            </span>
+          </div>
+
+          <div class="header__extra--copy">
+            <span class="header__extra--copy--name" id="copy">
+              Copy code
+            </span>
+          </div>
+        </div>
+
+        <button class="header__button">Play now</button>
+      </div>
+
+      <div class="header__logo"></div>
+      <div class="header__terms">
+        <span class="header__terms--name">
+          *Terms and Conditions Apply
+        </span>
+      </div>
+    </header>
+
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
