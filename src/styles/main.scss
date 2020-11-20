@@ -16,6 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 
   display: flex;
   justify-content: space-between;
@@ -24,6 +25,7 @@ body {
     position: relative;
     width: 50vw;
     transform: translate(0);
+    z-index: 2;
 
     @media (max-width: 1024px) {
       display: none;
@@ -35,6 +37,7 @@ body {
   }
 
   &__back {
+    position: relative;
     background-image: url("../images/sparks_back.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -53,15 +56,18 @@ body {
     background-attachment: fixed;
     background-position: left;
     height: 100vh;
+    width: 100vw;
   }
 
   &__front {
+    position: relative;
     background-image: url("../images/sparks_front.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
     background-position: left;
     height: 100vh;
+    width: 100vw;
   }
 
   &__right {
@@ -80,7 +86,6 @@ body {
     @media (max-width: 1024px) {
       width: 100vw;
       padding-right: 0%;
-      // transform: scale(0.7);
     }
 
     @media (max-width: 768px) {

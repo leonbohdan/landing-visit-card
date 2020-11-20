@@ -1,7 +1,15 @@
 'use strict';
 
+const Parallax = require('parallax-js');
+
 const copy = document.getElementById('copy');
 const code = document.getElementById('code');
+const scene = document.getElementById('scene');
+const parallaxInstance = new Parallax(scene, {
+  relativeInput: true,
+});
+
+parallaxInstance.friction(0.1, 0.1);
 
 const copyToClipboard = () => {
   code.select();
